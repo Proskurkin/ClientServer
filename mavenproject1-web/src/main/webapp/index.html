@@ -1,94 +1,73 @@
 <!DOCTYPE html>
 <html>
 <style>
+    input[type=submit] {
+        width: 188px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px;
+        margin: 12px 0px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type=text] {
+        width: 172px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px;
+        margin: 2px 0px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    select[id=country]{
+        width: 188px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+    }
     .center {
         width: 200px; /* Ширина элемента в пикселах */
-        padding: 40px; /* Поля вокруг текста */
+        padding: 5px 60px 60px 60px;  /* Поля вокруг текста */
         margin: auto; /* Выравниваем по центру */
-        background: #fc0; /* Цвет фона */
+        background: darkgrey; /* Цвет фона */
     }
+    body {
+        background-image: url("c:/Users\Евгений/Desktop\12.jpg");
 
-    .field {
-        clear: both;
-        text-align: right;
     }
-
-    .label {
-        float: left;
-    }
-
-    .main {
-        float: left;
-    }
-
 
 </style>
 <meta charset="utf-8">
 <body>
-<div>
+<div class="center">
     <div style="text-align: center;">
-        <h3>Diary</h3>
+        <h2>Diary</h2>
     </div>
-    <div class="main">
-        <div class="field">
-            <label for="fname">Login</label>
-            <input type="text" id="fname" name="firstname">
-            <br><br>
-            <label for="lName">Password</label>
-            <input type="text" id="lname" name="lastname">
-            </div>
-            <br>
-    </div>
+        <label for="Login">Логин</label>
+        <input type="text" id="Login" name="Логин">
+        <label for="Password">Пароль</label>
+        <input type="text" id="Password" name="Пароль">
+        <br>
+        <label for="country">Страна</label>
+        <select id="country" name="country">
+            <option value="australia">Russia</option>
+            <option value="ukraine">Ukraine</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+        </select>
+        <br>
+        <input type="submit" value="Вход">
 </div>
 </body>
 </html>
 
-<!--<div>-->
-<!--<input type="submit" value="Войти">-->
-<!--<input type="submit" value="Регистрация">-->
-<!--</div>-->
 
 
 
-<!--<script src="js/firstStepJS.js"></script>-->
-<!--<div>-->
-<!--</div>-->
-<!--<label for="country">State</label>-->
-<!--<select id="country" name="country">-->
-<!--<div>-->
-<!--</div>-->
-<!--<option value="australia">Australia</option>-->
-<!--<option value="canada">Canada</option>-->
-<!--<option value="usa">USA</option>-->
-<!--</select>-->
-<!--<div>-->
-<!--</div>-->
 
 
-<!--/*input[type=text], select {*/-->
-<!--/*width: 33%;*/-->
-<!--/*padding: 12px 20px;*/-->
-<!--/*margin-left: 110px;*/-->
-<!--/*display: inline-block;*/-->
-<!--/*border: 1px solid #ccc;*/-->
-<!--/*border-radius: 4px;*/-->
-<!--/*box-sizing: border-box;*/-->
-<!--/*}*/-->
-<!--/*input[type=submit] {*/-->
-<!--/*width: 33%;*/-->
-<!--/*background-color: #4CAF50;*/-->
-<!--/*color: white;*/-->
-<!--/*padding: 14px 20px;*/-->
-<!--/*margin: 8px 0;*/-->
-<!--/*border: none;*/-->
-<!--/*border-radius: 4px;*/-->
-<!--/*cursor: pointer;*/-->
-<!--/*}*/-->
-<!--/*input[type=submit]:hover {*/-->
-<!--/*background-color: #45a049;*/-->
-<!--/*}*/-->
-<!--/*div {*/-->
-<!--/*border-radius: 5px;*/-->
-<!--/*background-color: #f2f2f2;*/-->
-<!--/*padding: 20px;*/-->
-<!--/*}*/-->
+

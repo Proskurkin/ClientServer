@@ -1,0 +1,43 @@
+body {
+    background-image: url(../image/2.jpg);
+
+}
+input[type=submit] {
+    width: 375px;
+    background-color: #236184;
+    color: white;
+    padding: 8px;
+    margin: 12px 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=text] {
+    width: 360px;
+    background-color: #236184;
+    color: white;
+    padding: 8px;
+    margin: 2px 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+select[id=country]{
+    width: 375px;
+    background-color: #236184;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.center {
+    width: 400px; /* Ширина элемента в пикселах */
+    padding: 5px 40px 40px 40px;  /* Поля вокруг текста */
+    margin: auto ; /* Выравниваем по центру */
+    background: white; /* Цвет фона */
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+

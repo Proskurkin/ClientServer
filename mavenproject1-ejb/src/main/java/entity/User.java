@@ -40,7 +40,6 @@ public class User {
     }
 
     public User( String login, String password,String firsName, String secondName, String email, Countries countries) {
-
         this.firstName = firsName;
         this.lastName = secondName;
         this.login = login;

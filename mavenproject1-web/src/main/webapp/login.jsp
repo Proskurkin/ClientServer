@@ -10,9 +10,9 @@
 <head>
     <title>Title</title>
 </head>
-<body>
-    <form action="/signIn/" method="POST">
-    <input type="submit" value="Submit form "/>
-    </form>
+<%--<body>--%>
+    <%--<form action="/signIn/" method="GET">--%>
+    <%--<input type="submit" value="Submit form "/>--%>
+    <%--</form>--%>
 </body>
 </html>

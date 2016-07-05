@@ -20,6 +20,34 @@
     </properties>
     
     <dependencies>
+
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>4.2.1.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.0-api</artifactId>
+                <version>1.0.1.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>3.0-alpha-1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javaee</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>5</version>
+            </dependency>
+
+
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>

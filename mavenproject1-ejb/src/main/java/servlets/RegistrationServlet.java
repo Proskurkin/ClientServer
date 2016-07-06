@@ -26,16 +26,19 @@ public class RegistrationServlet extends HttpServlet {
         String country = req.getParameter("country");
         Gson gson = new Gson();
 
-        if(firstName!="" || lastName!="" || login!="" || password!="" || confirmPassword!="" || email!="" || country!=""){
+        if(firstName.isEmpty()||lastName.isEmpty()||login.isEmpty()||password.isEmpty()||confirmPassword.isEmpty()||email.isEmpty()||country.isEmpty()){
+            resp.getWriter().println("BAD REQUEST");
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
+        else {
             User user = new User(firstName,lastName,login,password,email,country);
             String json = gson.toJson(user);
             resp.getWriter().println(json);
+            resp.setStatus(HttpServletResponse.SC_OK);
+
 
         }
-        else {
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
-        }
 
     }
 }

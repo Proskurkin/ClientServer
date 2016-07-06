@@ -9,8 +9,8 @@ import javax.persistence.*;
  * Created by eproskurin on 01.07.2016.
  */
 @Entity(name = "user")
+@Table(name= "user")
 @NamedQuery(name ="User.getAll", query = "SELECT u FROM User u ")
-
 public class User {
     @Id
     @Column(name = "id")
@@ -46,6 +46,9 @@ public class User {
         this.password = password;
         this.email = email;
         this.countries = countries;
+    }
+
+    public User() {
     }
 
     public void setFirsName(String firsName) {

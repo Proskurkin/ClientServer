@@ -1,5 +1,7 @@
 package servlets;
 
+import com.google.gson.Gson;
+import entity.User;
 import sun.net.httpserver.HttpServerImpl;
 
 import javax.servlet.ServletException;
@@ -31,12 +33,26 @@ public class SignInServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         String login = req.getParameter("Login");
         String pass = req.getParameter("Pass");
-        out.println("<html>");
-        out.println("<body>");
-        out.println("<h1>Hello Servlet POST</h1>");
-        out.println(login);
-        out.println(pass);
-        out.println("</body>");
-        out.println("</html>");
+
+        if (login.isEmpty() ||  pass.isEmpty()) {
+            resp.setContentType("text/html;charset=utf-8");
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            }
+
+        else {
+            User user = new User(login,pass);
+            Gson gson = new Gson();
+            String json = gson.toJson(user);
+            out.println("<html>");
+            out.println("<body>");
+            out.println("<h1>Hello Servlet POST</h1>");
+            out.println(login);
+            out.println(pass);
+            out.println("</body>");
+            out.println("</html>");
+            resp.setContentType("text/html;charset=utf-8");
+            resp.getWriter().println(json);
+            resp.setStatus(HttpServletResponse.SC_OK);
+            }
     }
 }

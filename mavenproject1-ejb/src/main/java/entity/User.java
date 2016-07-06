@@ -25,23 +25,23 @@ public class User {
     @Column(name = "firsName")
     private String firstName;
 
-    @Column(name ="lastname")
+    @Column(name ="lastName")
     private String lastName;
 
     @Column(name = "email")
     private String email;
 
     @Column(name= "countries")
-    private Countries countries;
+    private String countries;
 
-    public User(String password, String login) {
+    public User(String login, String password) {
         this.password = password;
         this.login = login;
     }
 
-    public User( String login, String password,String firsName, String secondName, String email, Countries countries) {
+    public User(String firsName, String lastName,String login, String password, String email, String countries) {
         this.firstName = firsName;
-        this.lastName = secondName;
+        this.lastName = lastName;
         this.login = login;
         this.password = password;
         this.email = email;
@@ -68,7 +68,7 @@ public class User {
         this.email = email;
     }
 
-    public void setCountries(Countries countries) {
+    public void setCountries(String countries) {
         this.countries = countries;
     }
 
@@ -93,7 +93,7 @@ public class User {
         return email;
     }
 
-    public Countries getCountries() {
+    public String getCountries() {
         return countries;
     }
 }

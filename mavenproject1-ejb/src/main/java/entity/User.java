@@ -22,7 +22,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "firsName")
+    @Column(name = "firstName")
     private String firstName;
 
     @Column(name ="lastName")
@@ -76,7 +76,6 @@ public class User {
     }
 
     public String getFirsName() {
-
         return firstName;
     }
 

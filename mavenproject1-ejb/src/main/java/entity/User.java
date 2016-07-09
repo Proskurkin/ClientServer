@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity(name = "user")
 @Table(name= "user")
-@NamedQuery(name ="User.getAll", query = "SELECT u FROM User u ")
+@NamedQuery(name ="User.getAll", query = "SELECT u FROM user u ")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,8 +1,12 @@
 package servlets;
 
+import bean.UsersBean;
 import com.google.gson.Gson;
 import entity.User;
+import org.hibernate.jpa.internal.EntityManagerImpl;
 
+import javax.ejb.EJB;
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +19,8 @@ import java.io.IOException;
  */
 @WebServlet(value = "/registration/", name ="registration")
 public class RegistrationServlet extends HttpServlet {
+    @EJB
+    private UsersBean usersBean;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String firstName = req.getParameter("First name");
@@ -25,6 +31,7 @@ public class RegistrationServlet extends HttpServlet {
         String email = req.getParameter("email");
         String country = req.getParameter("country");
         Gson gson = new Gson();
+        EntityManager manager = null;
 
         if(firstName.isEmpty()||lastName.isEmpty()||login.isEmpty()||password.isEmpty()||confirmPassword.isEmpty()||email.isEmpty()||country.isEmpty()){
             resp.getWriter().println("BAD REQUEST");
@@ -35,6 +42,8 @@ public class RegistrationServlet extends HttpServlet {
             String json = gson.toJson(user);
             resp.getWriter().println(json);
             resp.setStatus(HttpServletResponse.SC_OK);
+            usersBean.add(user);
+
 
 
         }

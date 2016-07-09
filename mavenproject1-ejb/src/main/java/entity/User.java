@@ -13,6 +13,7 @@ import javax.persistence.*;
 @NamedQuery(name ="User.getAll", query = "SELECT u FROM User u ")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 

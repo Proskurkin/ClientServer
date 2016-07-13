@@ -2,7 +2,6 @@ package servlets;
 
 import com.google.gson.Gson;
 import entity.User;
-import sun.net.httpserver.HttpServerImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

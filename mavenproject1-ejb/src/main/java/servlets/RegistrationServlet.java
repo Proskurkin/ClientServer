@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.UUID;
 
 /**
  * Created by Евгений on 05.07.2016.
@@ -38,16 +39,21 @@ public class RegistrationServlet extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
         else {
-            User user = new User(firstName,lastName,login,password,email,country);
+            UUID uuid = UUID.randomUUID();
+            User user = new User(uuid,login,password,firstName,lastName,email,country);
+
             String json = gson.toJson(user);
             resp.getWriter().println(json);
             resp.setStatus(HttpServletResponse.SC_OK);
-            usersBean.add(user);
 
 
-
+            try {
+                usersBean.add(user);
+                resp.getWriter().println("add user comleted");
+            }
+            catch (Exception e){
+                System.out.println(e);
+            }
         }
-
-
     }
 }

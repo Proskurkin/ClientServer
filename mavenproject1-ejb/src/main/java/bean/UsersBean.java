@@ -14,8 +14,8 @@ public class UsersBean {
     @PersistenceContext(unitName = "postgresTest")
     private EntityManager em;
 
-    public User add(User user){
-        return em.merge(user);
+    public User add(User user) {
+        return  em.merge(user);
     }
 
 }

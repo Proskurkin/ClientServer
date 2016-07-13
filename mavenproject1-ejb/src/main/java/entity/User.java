@@ -1,21 +1,43 @@
 package entity;
 
-import com.sun.javafx.beans.IDProperty;
-import users.Countries;
 
 import javax.persistence.*;
-
+import java.util.UUID;
 /**
  * Created by eproskurin on 01.07.2016.
  */
-@Entity(name = "user")
-@Table(name= "user")
-@NamedQuery(name ="User.getAll", query = "SELECT u FROM user u ")
+@Entity(name = "users_ss")
+@Table(name= "users_ss")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    @org.hibernate.annotations.Type(type="pg-uuid")
+      private UUID id;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setId(UUID id) {
+
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     @Column(name = "login")
     private String login;
@@ -40,16 +62,26 @@ public class User {
         this.login = login;
     }
 
-    public User(String firsName, String lastName,String login, String password, String email, String countries) {
-        this.firstName = firsName;
-        this.lastName = lastName;
+    public User(UUID id, String login, String password, String firstName, String lastName, String email, String countries) {
+        this.id = id;
         this.login = login;
         this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.countries = countries;
     }
 
+
+
+
+
+    public User(String password) {
+        this.password = password;
+    }
+
     public User() {
+
     }
 
     public void setFirsName(String firsName) {

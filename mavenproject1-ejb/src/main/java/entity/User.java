@@ -1,43 +1,20 @@
 package entity;
 
 
+
 import javax.persistence.*;
 import java.util.UUID;
+
 /**
  * Created by eproskurin on 01.07.2016.
  */
-@Entity(name = "users_ss")
-@Table(name= "users_ss")
+@Entity(name = "users")
+@Table(name = "users")
 public class User {
     @Id
     @Column(name = "id")
-    @org.hibernate.annotations.Type(type="pg-uuid")
-      private UUID id;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setId(UUID id) {
-
-        this.id = id;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    @org.hibernate.annotations.Type(type="org.hibernate.type.PostgresUUIDType")
+    private UUID id;
 
     @Column(name = "login")
     private String login;
@@ -48,13 +25,13 @@ public class User {
     @Column(name = "firstName")
     private String firstName;
 
-    @Column(name ="lastName")
+    @Column(name = "lastName")
     private String lastName;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name= "countries")
+    @Column(name = "countries")
     private String countries;
 
     public User(String login, String password) {
@@ -72,13 +49,6 @@ public class User {
         this.countries = countries;
     }
 
-
-
-
-
-    public User(String password) {
-        this.password = password;
-    }
 
     public User() {
 
@@ -130,6 +100,28 @@ public class User {
 
     public String getCountries() {
         return countries;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setId(UUID id) {  this.id = id;}
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
 

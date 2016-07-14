@@ -55,5 +55,7 @@ public class RegistrationServlet extends HttpServlet {
                 System.out.println(e);
             }
         }
+
+
     }
 }

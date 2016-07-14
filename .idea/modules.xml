@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mavenproject1.iml" filepath="$PROJECT_DIR$/mavenproject1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mavenproject1-ear/mavenproject1-ear.iml" filepath="$PROJECT_DIR$/mavenproject1-ear/mavenproject1-ear.iml" />
       <module fileurl="file://$PROJECT_DIR$/mavenproject1-ejb/mavenproject1-ejb.iml" filepath="$PROJECT_DIR$/mavenproject1-ejb/mavenproject1-ejb.iml" />
       <module fileurl="file://$PROJECT_DIR$/mavenproject1-web/mavenproject1-web.iml" filepath="$PROJECT_DIR$/mavenproject1-web/mavenproject1-web.iml" />
     </modules>

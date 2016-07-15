@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
   <name>mavenproject1</name>
   <modules>
-    <module>mavenproject1-ear</module>
+
     <module>mavenproject1-web</module>
     <module>mavenproject1-ejb</module>
   </modules>

@@ -49,7 +49,6 @@ public class User {
         this.countries = countries;
     }
 
-
     public User() {
 
     }

@@ -37,12 +37,21 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="automatic-tests" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="automatic-tests" target="1.5" />
       <module name="mavenproject1" target="1.5" />
       <module name="mavenproject1-ear" target="1.7" />
       <module name="mavenproject1-ejb" target="1.7" />
       <module name="mavenproject1-web" target="1.7" />
+      <module name="tests" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

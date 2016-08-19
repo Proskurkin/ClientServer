@@ -8,7 +8,9 @@
   <name>mavenproject1</name>
   <modules>
 
-    <module>mavenproject1-web</module>
-    <module>mavenproject1-ejb</module>
+      <module>mavenproject1-web</module>
+      <module>mavenproject1-ejb</module>
+      <module>automatic-tests</module>
   </modules>
+
 </project>

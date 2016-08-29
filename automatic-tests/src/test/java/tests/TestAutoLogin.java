@@ -1,5 +1,5 @@
 package tests;
-import com.codeborne.selenide.Configuration;
+
 import org.junit.Test;
 
 import pages.AutoLoginPage;
@@ -16,13 +16,6 @@ public class TestAutoLogin {
     public void UnitCorrectLogin() {
         AutoLoginPage page = new AutoLoginPage();
         page.correctLogin(startPage, login, paswword);
-    }
-
-    @Test
-    public void UnitIncorrectLogin(){
-        AutoLoginPage page = new AutoLoginPage();
-        page.incorrectLogin(startPage, login+1, paswword);
-
     }
 }
 

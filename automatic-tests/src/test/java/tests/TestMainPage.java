@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.Test;
+import pages.ContractorPage;
 import pages.MainPage;
 
 /**
@@ -9,6 +10,7 @@ import pages.MainPage;
 public class TestMainPage {
     TestAutoLogin testAutoLogin = new TestAutoLogin();
     MainPage mainPage = new MainPage();
+    ContractorPage contractorPage = new ContractorPage();
 
 
     @Test
@@ -18,6 +20,7 @@ public class TestMainPage {
         mainPage.openMenu();
         mainPage.selectMenuItem("Все справочники");
         mainPage.selectSecondMenuItem("Справочник контрагентов");
+        contractorPage.addContractor();
 
 
         Thread.sleep(5000);

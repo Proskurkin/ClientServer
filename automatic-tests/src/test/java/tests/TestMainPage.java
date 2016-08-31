@@ -16,14 +16,15 @@ public class TestMainPage {
     @Test
     public void testOpenMenu() throws InterruptedException {
         testAutoLogin.UnitCorrectLogin();
-        mainPage.hideMenu();
-        mainPage.openMenu();
         mainPage.selectMenuItem("Все справочники");
         mainPage.selectSecondMenuItem("Справочник контрагентов");
-        contractorPage.addContractor();
+    }
 
-
-        Thread.sleep(5000);
+    @Test
+    public void testHideShowMenu(){
+        testAutoLogin.UnitCorrectLogin();
+        mainPage.hideMenu();
+        mainPage.openMenu();
     }
 
 }

@@ -17,7 +17,6 @@ public class MainPage {
     public void openMenu(){
         $(By.xpath("//*[@data-qtip='Показать меню']")).shouldHave(Condition.visible).click();
     }
-
     public void selectMenuItem(String name){
         $(By.xpath("//*[@data-qtip='"+name+"']")).doubleClick();
     }

@@ -1,9 +1,16 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selectors;
+import com.codeborne.selenide.ex.ElementNotFound;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.Selectors.byText;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 /**
  * Created by eproskurin on 30.08.2016.
@@ -20,16 +27,16 @@ public class ContractorPage {
 
     public void fillConractor(String contractor) {
         $(By.xpath("//*[@name='groupCompanyTypes']")).shouldBe(Condition.visible).setValue(contractor);
-        $(By.xpath("//ul/li[text() = "+"'" +contractor+"'"+"]")).doubleClick().pressTab();
+        $(By.xpath("//ul/li[text() = " + "'" + contractor + "'" + "]")).doubleClick().pressTab();
     }
 
     public void fillNameContractor(String name) {
-        $(By.xpath("//*[@name='name']")).setValue(name+random);
+        $(By.xpath("//*[@name='name']")).setValue(name + random);
     }
 
     public void fillPropertyType(String type) {
         $(By.xpath("//*[@name='propertyTypeId']")).setValue("ОООО"); // комбобокс начинает работать после ввода 4-ех символов
-        $(By.xpath("//ul/li[text() ="+"'" +type+"'"+"]")).click();
+        $(By.xpath("//ul/li[text() =" + "'" + type + "'" + "]")).click();
     }
 
     public void fillPhoneNumber(String number) { //"9991130007"
@@ -38,7 +45,7 @@ public class ContractorPage {
 
     public void fillTimeZone(String timeZone) {
         $(By.xpath("//*[@name='timezoneId']")).click();
-        $(By.xpath("//ul/li[text()="+"'" +timeZone+"'"+"]")).click();
+        $(By.xpath("//ul/li[text()=" + "'" + timeZone + "'" + "]")).click();
     }
 
     public void fillEmail() {
@@ -74,9 +81,20 @@ public class ContractorPage {
     public void clickSave() {
         $(By.xpath("//span[text()='Сохранить']")).click();
     }
+
+    public void tabEmployeeMarker() {
+        $(byText("Сотрудники")).shouldBe(Condition.visible).click();
+    }
+
+    public void addEmployee() throws ElementNotFound {
+        WebElement ele = $$(By.xpath("//*[@data-qtip='Добавить']")).get(1);
+        $(ele).pressEnter();
+
+        //$(By.xpath("//*[@data-qtip='Добавить']")).click();
+        //<a class="x-btn round-button x-unselectable x-box-item x-btn-default-small x-btn-after-title" hidefocus="on" unselectable="on" id="button-1698" tabindex="0" data-qtip="Добавить" componentid="button-1698" style="right: auto; left: 1110px; top: 0px; margin: 0px;"><span id="button-1698-btnWrap" data-ref="btnWrap" role="presentation" unselectable="on" style="" class="x-btn-wrap x-btn-wrap-default-small "><span id="button-1698-btnEl" data-ref="btnEl" role="presentation" unselectable="on" style="" class="x-btn-button x-btn-button-default-small  x-btn-no-text x-btn-icon x-btn-icon-left x-btn-button-center "><span id="button-1698-btnIconEl" data-ref="btnIconEl" role="presentation" unselectable="on" class="x-btn-icon-el x-btn-icon-el-default-small gridRoundButton " style="background-image:url(resources/icons/svg/basic/greenPlus.svg);">&nbsp;</span><span id="button-1698-btnInnerEl" data-ref="btnInnerEl" unselectable="on" class="x-btn-inner x-btn-inner-default-small">&nbsp;</span></span></span></a>
+
+    }
 }
-
-
 
 //        $(By.xpath("//*[@name='surname' and @class='x-form-field x-form-text x-form-text-default  x-form-invalid-field x-form-invalid-field-default x-form-empty-field x-form-empty-field-default']")).setValue("Крючков");
 //        $(By.xpath("//*[@name='name' and @class='x-form-field x-form-text x-form-text-default  x-form-invalid-field x-form-invalid-field-default x-form-empty-field x-form-empty-field-default']")).setValue("Иван");

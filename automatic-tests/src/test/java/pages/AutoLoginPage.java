@@ -16,7 +16,6 @@ public class AutoLoginPage {
 
     public void correctLogin(String page, String login, String password) {
         open(page);
-        String text = "Скрыть меню";
         $(By.name("textfield-1014-inputEl")).setValue(login);
         $(By.name("textfield-1015-inputEl")).setValue(password);
         $(By.xpath("//*[@id=\"button-1021-btnEl\"]")).click();

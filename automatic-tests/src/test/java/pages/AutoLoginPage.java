@@ -1,12 +1,9 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selectors;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 
 /**
@@ -14,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
  */
 public class AutoLoginPage {
 
-    public void correctLogin(String page, String login, String password) {
+    public static void correctLogin(String page, String login, String password) {
         open(page);
         $(By.name("textfield-1014-inputEl")).setValue(login);
         $(By.name("textfield-1015-inputEl")).setValue(password);

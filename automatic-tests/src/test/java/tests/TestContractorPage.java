@@ -1,41 +1,69 @@
 package tests;
 
 import org.junit.Test;
-import pages.ContractorPage;
+
+import static pages.ContractorPage.*;
+import static pages.ContractorPage.tabEmployeeMarker;
+
 
 /**
  * Created by eproskurin on 31.08.2016.
  */
-public class TestContractorPage {
-    ContractorPage contractorPage = new ContractorPage();
+public class TestContractorPage extends TestHelper{
 
     @Test
-    public void testCreateContractor() throws InterruptedException {
-        contractorPage.addContractor();
-        contractorPage.fillConractor("Заказчик");
-        contractorPage.fillNameContractor("Заказчик # ");
-        contractorPage.fillPropertyType("ОАО");
-        contractorPage.fillPhoneNumber("9991130007");
-        contractorPage.fillTimeZone("MSK");
-        contractorPage.fillEmail();
-        contractorPage.fillInn();
-        contractorPage.fillSectorAdressId("Москва");
-        contractorPage.fillHouseNo(1);
-        contractorPage.fillHousingNo(2);
-        contractorPage.fillBuildingNo(3);
-        contractorPage.fillAddressComments("Ты туда не ходи");
-        contractorPage.clickSave();
+    public static void testCreateContractor() throws InterruptedException {
+        addContractor();
+        fillContractor("Заказчик");
+        fillContractorName("Заказчик # ");
+        fillContractorPropertyType("ОАО");
+        fillContractorPhoneNumber("9991130007");
+        fillContractorTimeZone("MSK");
+        fillContractorEmail();
+        fillContractorInn();
+        fillContractorSectorAddressId("Москва");
+        fillContractorHouseNo(1);
+        fillContractorHousingNo(2);
+        fillContractorBuildingNo(3);
+        fillContractorAddressComments("Ты туда не ходи");
+        clickSave();
+
+    }
+
+
+
+    @Test
+    public static void createEmployee() throws InterruptedException {
+        addEmployee();
+        fillEmployeeCompany();
+        fillEmployeeSurname("Морковкин");
+        fillEmployeeName("Василий");
+        fillEmployeeMidlName("Петрович");
+        fillEmployeeComment("Хороший");
+        fillEmployeeEmail("Morkva@maill.ru");
+        fillEmployeePhone("9991550203");
+        fillEmployeePosition("Генеральный Директор");
+        EmployeeClickOk();
+    }
+
+    @Test
+    public static void editContractor(String name){
     }
 
 
     @Test
-    public void createEmployee() throws InterruptedException {
-        contractorPage.addEmployee();
+    public static void openEmployeeMarker(){
+        tabEmployeeMarker();
     }
+
     @Test
-    public void openEmployeeMarker(){
-        contractorPage.tabEmployeeMarker();
-        contractorPage.addEmployee();
+    public static void openCatalog(){
+        try {
+            tabCatalog();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+
 
 }

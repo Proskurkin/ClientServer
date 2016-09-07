@@ -10,17 +10,16 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class MainPage {
 
-
-    public void hideMenu(){
+    public static void hideMenu(){
         $(By.xpath("//*[@data-qtip='Скрыть меню']")).shouldHave(Condition.visible).click();
     }
-    public void openMenu(){
+    public static void openMenu(){
         $(By.xpath("//*[@data-qtip='Показать меню']")).shouldHave(Condition.visible).click();
     }
-    public void selectMenuItem(String name){
+    public static void selectMenuItem(String name){
         $(By.xpath("//*[@data-qtip='"+name+"']")).doubleClick();
     }
-    public void selectSecondMenuItem(String name){
+    public static void selectSecondMenuItem(String name){
         $(By.xpath("//*[@data-qtip='"+name+"']")).click();
     }
 
